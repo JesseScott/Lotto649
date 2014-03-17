@@ -7,7 +7,7 @@ String[]   lines;
 String[]   winningDraws;
 String[]   splitData;
 String     drawDate;
-String[]   winningNumbers;
+String[]   winningNumbers = new String[6];
 String     winningDraw;
 
 // SETUP
@@ -31,17 +31,16 @@ void setup() {
      println(drawDate);
      
      // Get Individual Numbers
-     winningNumbers = new String[6];
      winningNumbers[0] = splitData[4];
      winningNumbers[1] = splitData[5];
      winningNumbers[2] = splitData[6];
      winningNumbers[3] = splitData[7];
      winningNumbers[4] = splitData[8];
      winningNumbers[5] = splitData[9];
-     for(int j = 0; j < winningNumbers.length; j++) {
-       println(winningNumbers[j]); 
-     }
      
+     // Get Final Draw
+     winningDraw = join(winningNumbers, "-");
+     println(winningDraw); 
      
   }
   
