@@ -6,8 +6,8 @@
 String[]   lines;
 String[]   winningDraws;
 String[]   splitData;
-String     drawDate;
 String[]   winningNumbers = new String[6];
+String     drawDate;
 String     winningDraw;
 
 // SETUP
@@ -21,14 +21,13 @@ void setup() {
   
   // Loop Through Data
   for(int i = 0; i < lines.length; i++) {
-     println(lines[i]); 
+     //println(lines[i]); 
      
      // Split Data
      splitData = split(lines[i], ",");
      
      // Get Date
      drawDate  = splitData[3];
-     println(drawDate);
      
      // Get Individual Numbers
      winningNumbers[0] = splitData[4];
@@ -40,7 +39,10 @@ void setup() {
      
      // Get Final Draw
      winningDraw = join(winningNumbers, "-");
-     println(winningDraw); 
+     
+     // Print
+     println("The Winning Draw On " + drawDate + " Was " + winningDraw);
+
      
   }
   
