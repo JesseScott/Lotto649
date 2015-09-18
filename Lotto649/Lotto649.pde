@@ -9,13 +9,24 @@
 /* "PRODUCT","DRAW NUMBER","SEQUENCE NUMBER","DRAW DATE","NUMBER DRAWN 1","NUMBER DRAWN 2","NUMBER DRAWN 3","NUMBER DRAWN 4","NUMBER DRAWN 5","NUMBER DRAWN 6","BONUS NUMBER" */
 
 
+// IMPORTS
+
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+
 // VARIABLES
 
 Table table;
 PFont font;
 
 String[]gWinners;
-int[] gOne, gTwo, gThree, gFour, gFive, gSix;
+Integer[] gOne, gTwo, gThree, gFour, gFive, gSix;
 
 
 
@@ -37,6 +48,8 @@ void setup()
   
   // Populate Our Data
   populateData();
+  
+  getOccurencesOfNumberInArray(gOne);
   
 }
 
