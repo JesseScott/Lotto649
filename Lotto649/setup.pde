@@ -8,21 +8,25 @@
    void loadData() 
   {
     table = loadTable("csv/649.csv", "header");
+    int num = table.getRowCount();
     
-    gWinners = new String[table.getRowCount()];
-    gOne = new Integer[table.getRowCount()];
-    gTwo = new Integer[table.getRowCount()];
-    gThree = new Integer[table.getRowCount()];
-    gFour = new Integer[table.getRowCount()];
-    gFive = new Integer[table.getRowCount()];
-    gSix = new Integer[table.getRowCount()];
+    gWinners = new String[num];
+    gOne = new Integer[num];
+    gTwo = new Integer[num];
+    gThree = new Integer[num];
+    gFour = new Integer[num];
+    gFive = new Integer[num];
+    gSix = new Integer[num];
+    
+    gOneByVal = new ArrayList<Integer>();    
+    gOneByOccurence = new ArrayList<Integer>();
     
     msg = "There have been " + table.getRowCount() + " Lotto 6/49 draws since " + table.getRow(1).getString("DRAW DATE");
   }
   
   void populateData() 
   {
-    for(int i = 0; i < 100 /*table.getRowCount()*/; i++) {
+    for(int i = 0; i < table.getRowCount(); i++) {
       TableRow      row = table.getRow(i);
       int num     = row.getInt("DRAW NUMBER");
       String date = row.getString("DRAW DATE");
@@ -42,6 +46,6 @@
       gSix[i]     = six;
       gWinners[i] = "Draw #" + num + " on " + date + " had a winning sequence of " + one + "-" + two + "-" + three + "-" + four + "-" + five + "-" + six;
       
-      //println(gWinners[i]);
+      println(gWinners[i]);
     }
   }

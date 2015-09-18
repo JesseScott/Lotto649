@@ -27,7 +27,11 @@ PFont font;
 
 String[]gWinners;
 Integer[] gOne, gTwo, gThree, gFour, gFive, gSix;
+Integer[][] gOneByFreq;
+//List<ArrayList<Integer>> gOneByFreq;
 
+ArrayList<Integer> gOneByVal;
+ArrayList<Integer> gOneByOccurence;
 
 
 String msg = "";
@@ -49,8 +53,9 @@ void setup()
   // Populate Our Data
   populateData();
   
-  getOccurencesOfNumberInArray(gOne);
-  
+  // Read
+  getMostDrawnNumberInArray(gTwo);
+  listValuesForNumber(1);
 }
 
 // DRAW
