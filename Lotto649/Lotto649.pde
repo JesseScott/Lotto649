@@ -25,16 +25,22 @@ import java.util.Set;
 Table table;
 PFont font;
 
-String[]gWinners;
-Integer[] gOne, gTwo, gThree, gFour, gFive, gSix;
-Integer[][] gOneByFreq;
-//List<ArrayList<Integer>> gOneByFreq;
+int NUMBERS_DRAWN = 6;
 
-ArrayList<Integer> gOneByVal;
-ArrayList<Integer> gOneByOccurence;
+String [] gWinners;
+Integer[] gDraws_1, gDraws_2, gDraws_3, gDraws_4, gDraws_5, gDraws_6;
+ArrayList<Integer> gHighestBall_1, gHighestBall_2, gHighestBall_3, gHighestBall_4, gHighestBall_5, gHighestBall_6;
+ArrayList<Integer> gHighestTimes_1, gHighestTimes_2, gHighestTimes_3, gHighestTimes_4, gHighestTimes_5, gHighestTimes_6; 
 
 
-String msg = "";
+String msg_history = "";
+String msg_1 = "";
+String msg_2 = "";
+String msg_3 = "";
+String msg_4 = "";
+String msg_5 = "";
+String msg_6 = "";
+String spacer = "------\n";
 
 // SETUP
 void setup() 
@@ -45,7 +51,6 @@ void setup()
   
   // Font
   font = loadFont("font/Avenir-Black-48.vlw");
-  textFont(font, 32);
   
   // Load Our Data
   loadData();
@@ -54,8 +59,11 @@ void setup()
   populateData();
   
   // Read
-  getMostDrawnNumberInArray(gTwo);
-  listValuesForNumber(1);
+  for(int i = 0; i < NUMBERS_DRAWN; i++) {
+    getMostDrawnNumberInArray(i+1);
+    listValuesForNumber(i+1);
+    setMessageForArrayByIndex(i+1);
+  }
 }
 
 // DRAW
@@ -64,8 +72,10 @@ void draw()
 {
   // Render
   background(255);
-  fill(0);
-  text(msg, 50, 50);
+
+  // Show 
+  showHistory();
+  showHighestValues();
   
   
 }
