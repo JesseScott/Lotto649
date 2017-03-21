@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 import urllib
-import sys
 
 
 def dl_file(url, path, file):
